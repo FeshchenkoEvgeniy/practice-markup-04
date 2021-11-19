@@ -25,10 +25,13 @@ h1,
 h2,
 h3,
 ul,
-p {
+p,
+a {
   padding: 0;
   margin: 0;
   font-size: inherit;
+  list-style: none;
+  text-decoration: none;
 }
 .hide-title {
   position: absolute;
@@ -51,6 +54,10 @@ p {
 }
 .header {
   border-bottom: 1px solid #ececec;
+}
+.portfolio-social-icon,
+.regular-customers-icon {
+  fill: #afb1b8;
 }
 /*---------------------------- Header ----------------------------*/
 .flex,
@@ -90,33 +97,50 @@ p {
   letter-spacing: 0.02em;
   list-style: none;
   display: flex;
-  padding: 32px 0px;
   margin-left: auto;
 }
 .contacts li:not(:last-child) {
   margin-right: 50px;
 }
-.contacts a {
+.contact-icon {
+  display: flex;
+  align-items: center;
   padding: 32px 0px;
   text-decoration: none;
   color: var(--mainSecondColor);
 }
-.contacts a:hover,
-.contacts a:focus {
+.contact-icon:hover,
+.contact-icon:focus {
   color: var(--blueColor);
+}
+.contact-icon:hover .icon,
+.contact-icon:focus .icon {
+  fill: var(--blueColor);
+}
+.icon {
+  fill: var(--mainSecondColor);
+  margin-right: 10px;
 }
 /*---------------------------- Main ----------------------------*/
 /* ----------------------------------------- Section 1 ----------------------------------------- */
 .hat-hero {
   background-color: var(--mainBG);
   padding: 200px 0px;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-img/Img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1600px;
+  height: 600px;
+  margin: 0 auto;
 }
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.hat-hero h1 {
+.hero h1 {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -127,7 +151,7 @@ p {
   text-transform: uppercase;
   color: var(--white);
 }
-.hat-hero button {
+.hero button {
   background-color: var(--blueColor);
   color: var(--white);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -141,8 +165,8 @@ p {
   border: none;
   font-family: inherit;
 }
-.hat-hero button:hover,
-.hat-hero button:focus {
+.hero button:hover,
+.hero button:focus {
   background-color: var(--blueColor);
 }
 /* ----------------------------------------- Section 2 ----------------------------------------- */
@@ -173,6 +197,19 @@ p {
   letter-spacing: 0.03em;
   color: var(--mainSecondColor);
 }
+.feature-item {
+  width: 270px;
+  height: 120px;
+  border-radius: 4px;
+  background-color: var(--sectionBG);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.feature-item + .feature-item {
+  margin-right: 30px;
+}
 /* ----------------------------------------- Section 3 ----------------------------------------- */
 .position {
   padding-top: 0px;
@@ -193,7 +230,6 @@ p {
   margin-right: 30px;
 }
 /* ----------------------------------------- Section 4 ----------------------------------------- */
-
 .team {
   background-color: #f5f4fa;
 }
@@ -203,7 +239,6 @@ p {
   line-height: 1.16;
   text-align: center;
   letter-spacing: 0.03em;
-  color: var(--mainColor);
 }
 .team-list {
   list-style: none;
@@ -211,7 +246,7 @@ p {
   flex-wrap: wrap;
   margin-left: -30px;
 }
-.team-list li {
+.team-list .team-item {
   flex-basis: calc((100% - 4 * 30px) / 4);
   margin-left: 30px;
   background: var(--white);
@@ -230,13 +265,77 @@ p {
   line-height: 1.18;
   letter-spacing: 0.03em;
   margin-bottom: 10px;
-  color: var(--mainColor);
 }
 .team-list p {
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
   color: var(--mainSecondColor);
+}
+.portfolio-social-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.portfolio-social-item {
+  width: 44px;
+  height: 44px;
+}
+.portfolio-social-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+.portfolio-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.portfolio-social-link:hover,
+.portfolio-social-link:focus {
+  background-color: var(--blueColor);
+}
+.portfolio-social-link:hover .portfolio-social-icon,
+.portfolio-social-link:focus .portfolio-social-icon {
+  fill: var(--white);
+}
+/* ----------------------------------------- Section 5 ----------------------------------------- */
+.regular-customers {
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 50px;
+}
+.regular-customers-list {
+  display: flex;
+}
+.regular-customers-link {
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.regular-customers-item:not(:last-child) {
+  margin-right: 30px;
+}
+.regular-customers-icon {
+  width: 106px;
+  height: 60px;
+}
+.regular-customers-link:hover,
+.regular-customers-link:focus {
+  color: var(--blueColor);
+  border-color: var(--blueColor);
+}
+.regular-customers-link:hover .regular-customers-icon,
+.regular-customers-link:focus .regular-customers-icon {
+  fill: var(--blueColor);
 }
 /*---------------------------- Footer ----------------------------*/
 .footer {
@@ -273,6 +372,50 @@ p {
 .footer-contacts:hover {
   color: var(--blueColor);
 }
+/*---------------------------- Footer Social Link ----------------------------*/
+.footer-position {
+  display: flex;
+  align-items: baseline;
+}
+.footer-social-box p {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.footer-social-box {
+  margin-left: 70px;
+}
+.footer-social-list {
+  display: flex;
+}
+.footer-social-item {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.footer-social-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-social-icon {
+  fill: var(--white);
+}
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--blueColor);
+}
 /*---------------------------- Portfolio ----------------------------  */
 .filter-list {
   list-style: none;
@@ -298,6 +441,8 @@ p {
 }
 .filter-list button:hover,
 .filter-list button:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
   background-color: var(--blueColor);
   color: #ffffff;
 }
@@ -333,4 +478,13 @@ p {
 }
 .project-img {
   display: block;
+}
+.project-link {
+  display: block;
+  color: var(--mainColor);
+}
+.project-link:hover,
+.project-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
