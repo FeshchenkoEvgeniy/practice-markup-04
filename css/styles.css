@@ -337,6 +337,7 @@ a {
 .regular-customers-link:focus .regular-customers-icon {
   fill: var(--blueColor);
 }
+
 /*---------------------------- Footer ----------------------------*/
 .footer {
   background-color: var(--mainBG);
